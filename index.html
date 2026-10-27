@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101813">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Бой с тенью — анимация</title>
+  <link rel="icon" type="image/svg+xml" href="./knight.svg">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header><a href="https://shakhmaty-eta.vercel.app/#today">← Личный тренер</a><span>Просмотр анимации</span></header>
+  <main>
+    <section id="shadow-demo" aria-labelledby="title">
+      <div class="art"><video muted loop playsinline preload="none" width="1280" height="720" poster="./shadow-poster.webp" data-src="./shadow-loop.mp4" data-webm="./shadow-loop.webm" aria-hidden="true" tabindex="-1"></video></div>
+      <div class="caption"><h1 id="title">Бой с тенью</h1><p>Твой соперник — ты неделю назад.</p><p class="status">Игра пока выключена.</p></div>
+      <div class="controls"><button id="shadow-motion" aria-pressed="false">Включить анимацию</button><a href="./shadow-loop.mp4" download="boy-s-tenyu-loop.mp4">Скачать анимацию ↓</a></div>
+    </section>
+  </main>
+  <script type="module" src="./animation.js"></script>
+</body>
+</html>
