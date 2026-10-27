@@ -1,23 +1,120 @@
 <!doctype html>
 <html lang="ru">
 <head>
+  <script>if(!['game','puzzle','opening'].some(key=>new URLSearchParams(location.search).has(key)))document.head.append(Object.assign(document.createElement('link'),{rel:'modulepreload',crossOrigin:'',href:"/shakhmaty-preview/assets/daily-3d-Do9aCJ1l.js"}));</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#101813">
-  <meta name="robots" content="noindex,nofollow">
-  <title>Бой с тенью — анимация</title>
-  <link rel="icon" type="image/svg+xml" href="./knight.svg">
-  <link rel="stylesheet" href="./style.css">
+  <meta name="theme-color" content="#202522">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Личный шахматный тренер: разбор твоих ошибок, упражнения, короткие материалы и дебютные планы.">
+  <link rel="preload" href="/shakhmaty-preview/fonts/syne-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/shakhmaty-preview/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="/shakhmaty-preview/knight.svg">
+  <title>Шахматы Женя — личная тренировка</title>
+  <script type="module" crossorigin src="/shakhmaty-preview/assets/main-onjEFJdS.js"></script>
+  <link rel="modulepreload" crossorigin href="/shakhmaty-preview/assets/style-DphbLNJa.js">
+  <link rel="stylesheet" crossorigin href="/shakhmaty-preview/assets/style-DzSixrZW.css">
 </head>
 <body>
-  <header><a href="https://shakhmaty-eta.vercel.app/#today">← Личный тренер</a><span>Просмотр анимации</span></header>
-  <main>
-    <section id="shadow-demo" aria-labelledby="title">
-      <div class="art"><video muted loop playsinline preload="none" width="1280" height="720" poster="./shadow-poster.webp" data-src="./shadow-loop.mp4" data-webm="./shadow-loop.webm" aria-hidden="true" tabindex="-1"></video></div>
-      <div class="caption"><h1 id="title">Бой с тенью</h1><p>Твой соперник — ты неделю назад.</p><p class="status">Игра пока выключена.</p></div>
-      <div class="controls"><button id="shadow-motion" aria-pressed="false">Включить анимацию</button><a href="./shadow-loop.mp4" download="boy-s-tenyu-loop.mp4">Скачать анимацию ↓</a></div>
+  <div class="world" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">К содержимому</a>
+  <svg class="icon-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="icon-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+    <symbol id="icon-flip" viewBox="0 0 24 24"><path d="M7 3v18m-4-4 4 4 4-4M17 21V3m-4 4 4-4 4 4"/></symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><path d="M8 3v6m8 0v6m-6 0v6"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="icon-back" viewBox="0 0 24 24"><path d="m14 5-7 7 7 7"/></symbol>
+    <symbol id="icon-next" viewBox="0 0 24 24"><path d="m10 5 7 7-7 7"/></symbol>
+    <symbol id="icon-first" viewBox="0 0 24 24"><path d="M5 5v14m12-14-7 7 7 7"/></symbol>
+    <symbol id="icon-last" viewBox="0 0 24 24"><path d="M19 5v14M7 5l7 7-7 7"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></symbol>
+    <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 5C9 3 5 3 2 4v15c4-1 7-1 10 1 3-2 6-2 10-1V4c-3-1-7-1-10 1Zm0 0v15"/></symbol>
+    <symbol id="icon-board" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18m6-18v18M3 9h18M3 15h18"/></symbol>
+  </defs></svg>
+  <nav class="app-dock" aria-label="Навигация"><a href="/shakhmaty-preview/" id="daily-link" class="active"><svg class="icon" aria-hidden="true"><use href="#icon-book"/></svg><span>Практика</span></a><a id="review-link" hidden><svg class="icon" aria-hidden="true"><use href="#icon-board"/></svg><span>Разбор</span></a><button id="connection" class="connection" aria-label="Lichess и подключение"><span class="status-dot"></span><span>Lichess</span></button></nav>
+  <main id="main" tabindex="-1">
+    <div class="sr-only"><p id="page-label"></p><h1 id="page-title">Твоя тренировка</h1><span id="date"></span></div>
+    <section id="quote-entrance" class="quote-entrance" aria-label="Мысли о шахматах" hidden>
+      <div class="quote-sticky"><blockquote id="welcome-quote" class="quote-text"></blockquote></div>
     </section>
+    <span id="today" class="section-anchor" aria-hidden="true"></span>
+    <div id="notice" class="notice" role="status" hidden></div>
+    <div id="page-loading" class="page-loading" role="status"><span class="loading-mark"></span>Готовлю твою тренировку…</div>
+    <section id="daily-gallery" class="daily-gallery" aria-label="Шахматные задачи" hidden>
+      <div id="daily-cards" class="daily-cards"></div>
+    </section>
+    <section id="shadow-entry" class="shadow-entry shadow-decoration" aria-label="Бой с тенью. Декоративная анимация; режим игры пока выключен." hidden>
+      <div class="shadow-art"><video muted loop playsinline preload="none" width="1280" height="720" data-src="/shakhmaty-preview/shadow-loop.mp4" data-webm="/shakhmaty-preview/shadow-loop.webm" data-poster="/shakhmaty-preview/shadow-poster.webp" aria-hidden="true" tabindex="-1"></video></div>
+    </section>
+    <section id="training-empty" class="training-empty" hidden>
+      <div class="empty-copy"><p class="eyebrow" id="empty-label">С чего начнём</p><h2 id="empty-title">Твоя партия — первый урок</h2><p id="empty-text">Подключи Lichess. После следующей партии здесь появятся твои главные ошибки и упражнения для их исправления.</p><div class="empty-actions"><a id="empty-action" class="button primary" href="/api/auth/lichess">Подключить Lichess</a><button id="empty-sync" class="text-button" hidden>Обновить партии</button><button id="reload-daily" class="button secondary" hidden>Попробовать снова</button></div><p id="sync-status" class="sync-status" role="status" hidden></p></div>
+      <div class="hero-space" aria-hidden="true"><span class="scene-caption">Каждая сильная игра<br>начинается с одного хода.</span></div>
+      <ol id="start-steps" class="start-steps"><li id="connect-step"><span>1</span><div><strong>Подключи Lichess</strong><p>Один раз, без передачи пароля</p></div></li><li><span>2</span><div><strong>Сыграй новую партию</strong><p>Тренер сам найдёт важные решения</p></div></li><li><span>3</span><div><strong>Исправь и закрепи</strong><p>Короткий урок и практика на доске</p></div></li></ol>
+    </section>
+    <div id="workspace" class="workspace">
+      <section class="board-column" aria-label="Доска и управление">
+        <div id="puzzle-toolbar" class="puzzle-toolbar" hidden><a class="training-return daily-back" href="/shakhmaty-preview/#today" aria-label="Вернуться к доскам"><svg class="icon" aria-hidden="true"><use href="#icon-back"/></svg></a><span id="puzzle-turn"></span></div>
+        <div class="player"><span class="avatar" id="top-avatar" aria-hidden="true">♚</span><span class="player-name"><strong id="top-player">Соперник</strong><small id="top-detail">Найди лучший ответ на его защиту</small></span><span id="game-result" class="result" hidden></span></div>
+        <div class="board-stage">
+          <div id="evaluation" class="evaluation" aria-label="Оценка позиции" hidden><div id="evaluation-white"></div><span id="evaluation-number">0.0</span></div>
+          <div class="board-wrap"><div id="board" class="board" role="group" tabindex="-1" aria-label="Шахматная доска. Выбери фигуру и поле или перетащи фигуру."></div><svg id="arrows" viewBox="0 0 800 800" aria-hidden="true"><defs><marker id="arrow-head" markerWidth="3" markerHeight="3" refX="2" refY="1.5" orient="auto"><path d="M0,0 L3,1.5 L0,3 Z" fill="currentColor"/></marker></defs><path id="move-arrow" marker-end="url(#arrow-head)"/></svg></div>
+        </div>
+        <div class="player"><span class="avatar light" id="bottom-avatar" aria-hidden="true">♔</span><span class="player-name"><strong id="bottom-player">Твой ход</strong><small id="turn-label">Рассчитай всё продолжение</small></span><div class="board-tools"><button id="focus-mode" class="icon-button" title="Сосредоточиться на доске" aria-label="Сосредоточиться на доске" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#icon-expand"/></svg></button><button id="flip" class="icon-button" title="Перевернуть доску" aria-label="Перевернуть доску"><svg class="icon" aria-hidden="true"><use href="#icon-flip"/></svg></button><button id="settings" class="icon-button" title="Настройки доски" aria-label="Настройки доски"><svg class="icon" aria-hidden="true"><use href="#icon-settings"/></svg></button></div></div>
+        <div id="board-message" class="board-message" aria-hidden="true">Готовлю позицию…</div>
+        <div id="solution-controls" class="solution-playback" hidden><p id="solution-step" class="solution-step" role="status"></p><div class="solution-controls"><button id="solution-prev" class="button secondary">← Назад</button><button id="solution-next" class="button secondary">Следующий ход →</button></div></div>
+        <div id="branch-controls" class="branch-controls" hidden><button id="undo-variation" class="button secondary">↶ Отменить ход</button><button id="return-game" class="text-button">Вернуться к партии</button></div>
+        <div id="review-controls" class="review-controls" hidden>
+          <button id="first-move" class="icon-button" aria-label="Начало партии" title="Начало партии"><svg class="icon" aria-hidden="true"><use href="#icon-first"/></svg></button><button id="previous-move" class="icon-button" aria-label="Предыдущий ход" title="Предыдущий ход · ←"><svg class="icon" aria-hidden="true"><use href="#icon-back"/></svg></button><button id="autoplay" class="icon-button play" aria-label="Включить показ партии" title="Показ партии"><svg class="icon" aria-hidden="true"><use href="#icon-play"/></svg></button><button id="next-move" class="icon-button" aria-label="Следующий ход" title="Следующий ход · →"><svg class="icon" aria-hidden="true"><use href="#icon-next"/></svg></button><button id="last-move" class="icon-button" aria-label="Конец партии" title="Конец партии"><svg class="icon" aria-hidden="true"><use href="#icon-last"/></svg></button>
+        </div>
+        <details id="chart-panel" class="chart-panel" hidden><summary class="chart-heading">Как менялась позиция <span class="muted">Открыть график</span></summary><svg id="score-chart" viewBox="0 0 600 82" role="group" aria-label="Оценка по ходам. Нажми на график, чтобы перейти к ходу."></svg></details>
+      </section>
+      <aside class="side-panel">
+        <section id="daily-panel">
+          <div class="panel-heading"><span class="eyebrow">Практика по твоим ошибкам</span><span id="daily-count" class="pill"></span></div>
+          <p id="daily-summary" class="daily-summary"></p>
+          <div id="puzzle-tabs" class="puzzle-tabs" role="group" aria-label="Выбрать упражнение"></div>
+          <h2 id="puzzle-title">Найди ход сильнее</h2>
+          <div class="puzzle-meta"><span id="puzzle-rating" class="pill"></span><span id="puzzle-length" class="muted"></span></div>
+          <p id="puzzle-why" class="intro"></p>
+          <button id="read-lesson" class="lesson-link"><svg class="icon" aria-hidden="true"><use href="#icon-book"/></svg><span id="lesson-label">Короткий урок · 2 минуты</span></button>
+          <div id="puzzle-progress" class="puzzle-progress" aria-label="Прогресс решения"></div>
+          <div id="feedback" class="feedback" role="status">Загружаю задачи на сегодня…</div>
+          <div class="puzzle-actions"><button id="hint" class="text-button">Подсказка</button><details id="puzzle-more" class="more-actions"><summary aria-label="Действия с задачей">···</summary><div><button id="reset" class="text-button">Начать заново</button><button id="reveal" class="text-button">Открыть решение</button></div></details></div>
+          <div id="solution" class="solution" hidden><h3>Закрепи идею</h3><p id="solution-intro"></p><details><summary>Решение словами</summary><p id="solution-text"></p></details></div>
+          <button id="next-puzzle" class="button primary full" hidden>Следующая задача →</button>
+          <a id="puzzle-game-link" class="text-button full" hidden>Посмотреть эту ошибку в партии →</a>
+          <div class="daily-footer"><span class="status-dot"></span><p>Пройденные позиции вернутся на повторение через 1, 3, 7 и 14 дней. Новые ошибки уточняют план.</p></div>
+        </section>
+        <section id="opening-panel" hidden><p class="eyebrow" id="opening-trigger"></p><h2 id="opening-title"></h2><p id="opening-reason" class="intro"></p><ol id="opening-plans" class="opening-plans"></ol><div id="opening-feedback" class="feedback" role="status"></div><div class="puzzle-actions"><button id="opening-restart" class="button secondary">Повторить пример</button><a class="text-button" href="/shakhmaty-preview/">К моей тренировке</a></div><p class="muted">Это учебный пример. Соперник может выбрать другие ходы — тогда ориентируйся на планы и угрозы.</p></section>
+        <section id="review-panel" hidden>
+          <div class="panel-heading"><span class="eyebrow">Разбор твоей партии</span><span class="pill">Stockfish 19</span></div>
+          <div id="review-loading" class="empty-state" role="status">Загружаю твою партию…</div>
+          <div id="review-content" hidden>
+            <div class="review-summary"><strong id="review-result"></strong><p id="review-summary"></p><div id="moment-list" class="moment-list" aria-label="Важные моменты"></div></div>
+            <article class="coach-card"><div class="coach-heading"><span id="move-badge" class="move-badge">♞</span><div><small id="coach-subtitle">Твой тренер</small><h2 id="coach-title">Начало партии</h2></div></div><p id="coach-lead"></p><details id="coach-details"><summary>Почему и что было лучше</summary><p id="coach-text"></p></details><p id="coach-tip" class="coach-tip"></p><div id="line-actions" class="line-actions"></div></article>
+            <div id="retry-panel" class="retry-panel" hidden><strong id="retry-title">Найди ход сильнее</strong><p id="retry-feedback" role="status"></p><button id="retry-show" class="text-button">Показать и объяснить</button></div>
+            <div class="review-actions"><button id="retry-move" class="button primary">Исправить на доске</button><button id="best-line" class="button secondary">Лучший вариант</button><button id="next-moment" class="button secondary">Следующий момент →</button></div>
+            <button id="explore" class="text-button full">Проверить свой ход на доске</button>
+            <p id="variation-status" class="variation-status" role="status" hidden></p>
+            <button id="review-lesson" class="lesson-link" hidden>Короткий урок по этой ошибке</button><a href="/shakhmaty-preview/" class="training-return">Закрепить ошибки в моей тренировке →</a>
+            <details id="moves-details" class="moves-details"><summary>Все ходы партии <span class="muted">← →</span></summary><div id="move-list" class="move-list" aria-label="Ходы партии"></div></details>
+            <a class="telegram-question" href="https://t.me/ShakhmatyZhenyaCoachBot" target="_blank" rel="noopener">Задать вопрос тренеру в Telegram ↗</a>
+          </div>
+        </section>
+      </aside>
+    </div>
+    <section id="learning-overview" class="learning-overview" hidden>
+      <details id="weakness-details"><summary>Понять свою игру <span id="learning-sample" class="muted"></span></summary><div id="topic-list" class="topic-list"></div></details>
+      <details id="progress-details"><summary>Увидеть изменения</summary><div id="trajectory" class="trajectory"></div><div id="recent-games" class="recent-games"></div></details>
+      <details id="openings-details"><summary>Найти своё начало</summary><div id="playing-style" class="playing-style"></div><div id="opening-list" class="opening-list"></div></details>
+    </section>
+    <footer><a id="latest-game" hidden>К последней партии ↗</a><span id="cutoff-note" class="sr-only">Разбираем только новые партии.</span></footer>
   </main>
-  <script type="module" src="./animation.js"></script>
+  <dialog id="reading-dialog"><button id="close-reading" class="dialog-close icon-button" aria-label="Закрыть">×</button><p class="eyebrow" id="reading-theme"></p><h2 id="reading-title"></h2><p id="reading-context" class="muted"></p><div id="reading-body" class="reading-body"></div><p id="reading-habit" class="coach-tip"></p><a id="reading-source" class="text-button" target="_blank" rel="noopener">Почитать подробнее ↗</a><button id="reading-practice" class="button primary full">Вернуться к позиции</button></dialog>
+  <dialog id="settings-dialog"><button id="close-settings" class="dialog-close icon-button" aria-label="Закрыть">×</button><p class="eyebrow">ТВОЁ УДОБСТВО</p><h2>Доска и отклик</h2><label class="setting-row" for="sound-setting"><span><strong>Звуки ходов</strong><small>Короткий отклик на ход и результат</small></span><input id="sound-setting" type="checkbox" role="switch"></label><label class="setting-row" for="motion-setting"><span><strong>Анимация и переходы</strong><small>Движение фигур и появление блоков. Учитывает уменьшение движения на устройстве</small></span><input id="motion-setting" type="checkbox" role="switch" checked></label><p class="muted">Настройки сохраняются в этом браузере. Фигуры можно перемещать нажатием или перетаскиванием. На доске доступны стрелки и Enter, в разборе — ← и →.</p></dialog>
+  <dialog id="connection-dialog"><button id="close-connection" class="dialog-close icon-button" aria-label="Закрыть">×</button><p class="eyebrow">НОВЫЕ ПАРТИИ → ЛИЧНЫЙ РАЗБОР</p><h2>Lichess и твой тренер</h2><p id="connection-status">Для личного доступа открой сайт по кнопке в Telegram-боте.</p><a id="connect-lichess" class="button primary" href="/api/auth/lichess">Подключить Lichess ↗</a><a id="login-link" class="button primary" href="https://t.me/ShakhmatyZhenyaCoachBot?start=site" target="_blank" rel="noopener">Войти через Telegram ↗</a><form id="import-form" hidden><label for="game-url">Ссылка на только что сыгранную партию</label><div class="import-row"><input id="game-url" type="url" placeholder="https://lichess.org/…" required maxlength="200"><button class="button secondary" type="submit">Открыть →</button></div><p id="import-status" role="status"></p></form><p class="muted">Новые завершённые партии появляются автоматически. Время начала проверяется у Lichess. Прежние партии не импортируются.</p><button id="logout" class="text-button" hidden>Выйти</button></dialog>
+  <dialog id="promotion"><h2>Выбери фигуру</h2><div class="promotion-choices"><button class="button secondary" data-promote="q">Ферзь ♛</button><button class="button secondary" data-promote="r">Ладья ♜</button><button class="button secondary" data-promote="b">Слон ♝</button><button class="button secondary" data-promote="n">Конь ♞</button></div><button id="cancel-promotion" class="text-button">Отмена</button></dialog>
 </body>
 </html>
