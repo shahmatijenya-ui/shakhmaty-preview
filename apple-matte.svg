@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <defs>
-    <path id="am-body" d="M124 58 103 43 81 40 59 47 40 64 28 86 22 112 23 141 31 169 45 193 64 213 87 227 110 233 130 230 149 234 174 227 197 211 216 189 229 163 235 136 234 108 226 82 212 60 192 43 169 34 147 37Z"/>
+    <path id="am-body" d="M124 58C105 40 84 34 59 47 32 61 19 91 22 125 19 162 39 193 64 213 85 231 107 237 130 230 150 239 177 229 197 211 223 187 238 156 235 125 237 93 224 64 202 49 182 33 160 27 142 42Z"/>
     <clipPath id="am-clip"><use href="#am-body"/></clipPath>
     <radialGradient id="am-skin" cx=".74" cy=".25" r=".83">
       <stop stop-color="#f77769"/><stop offset=".28" stop-color="#cf273b"/>
@@ -43,90 +43,7 @@
   </defs>
   <use href="#am-body" fill="url(#am-skin)"/>
   <g clip-path="url(#am-clip)">
-    <g stroke-linejoin="round" stroke-width=".45">
-      <path fill="#8a1733" stroke="#8a1733" d="M22 112 28 86 53 96Z"/>
-      <path fill="#a3213b" stroke="#a3213b" d="M28 86 40 64 61 70Z"/>
-      <path fill="#991c36" stroke="#991c36" d="M28 86 61 70 53 96Z"/>
-      <path fill="#b12b40" stroke="#b12b40" d="M40 64 59 47 61 70Z"/>
-      <path fill="#c43b4c" stroke="#c43b4c" d="M59 47 81 40 89 62Z"/>
-      <path fill="#b52f44" stroke="#b52f44" d="M59 47 89 62 61 70Z"/>
-      <path fill="#aa263e" stroke="#aa263e" d="M81 40 103 43 89 62Z"/>
-      <path fill="#8a1832" stroke="#8a1832" d="M103 43 124 58 89 62Z"/>
-      <path fill="#77112d" stroke="#77112d" d="M61 70 89 62 85 92Z"/>
-      <path fill="#941631" stroke="#941631" d="M61 70 85 92 53 96Z"/>
-      <path fill="#640e27" stroke="#640e27" d="M89 62 124 58 119 82Z"/>
-      <path fill="#73102b" stroke="#73102b" d="M89 62 119 82 85 92Z"/>
-      <path fill="#b7243a" stroke="#b7243a" d="M124 58 147 37 153 57Z"/>
-      <path fill="#dd4c55" stroke="#dd4c55" d="M147 37 169 34 153 57Z"/>
-      <path fill="#ed655f" stroke="#ed655f" d="M169 34 192 43 153 57Z"/>
-      <path fill="#e95b59" stroke="#e95b59" d="M192 43 178 64 153 57Z"/>
-      <path fill="#f27a6c" stroke="#f27a6c" d="M192 43 212 60 196 76Z"/>
-      <path fill="#ec6a62" stroke="#ec6a62" d="M192 43 196 76 178 64Z"/>
-      <path fill="#d95052" stroke="#d95052" d="M212 60 226 82 196 76Z"/>
-      <path fill="#b42b3d" stroke="#b42b3d" d="M153 57 178 64 150 89Z"/>
-      <path fill="#8d1831" stroke="#8d1831" d="M124 58 153 57 119 82Z"/>
-      <path fill="#a61f37" stroke="#a61f37" d="M153 57 150 89 119 82Z"/>
-      <path fill="#e85c58" stroke="#e85c58" d="M178 64 196 76 183 98Z"/>
-      <path fill="#d93e49" stroke="#d93e49" d="M150 89 178 64 183 98Z"/>
-      <path fill="#f07869" stroke="#f07869" d="M196 76 226 82 211 104Z"/>
-      <path fill="#d7474c" stroke="#d7474c" d="M183 98 196 76 211 104Z"/>
-      <path fill="#c93642" stroke="#c93642" d="M226 82 234 108 211 104Z"/>
-      <path fill="#6d102b" stroke="#6d102b" d="M22 112 53 96 45 132Z"/>
-      <path fill="#530e25" stroke="#530e25" d="M22 112 45 132 23 141Z"/>
-      <path fill="#90132e" stroke="#90132e" d="M53 96 85 92 71 121Z"/>
-      <path fill="#7c102b" stroke="#7c102b" d="M53 96 71 121 45 132Z"/>
-      <path fill="#a91935" stroke="#a91935" d="M85 92 119 82 107 115Z"/>
-      <path fill="#b51e37" stroke="#b51e37" d="M85 92 107 115 71 121Z"/>
-      <path fill="#bd253b" stroke="#bd253b" d="M119 82 150 89 135 122Z"/>
-      <path fill="#a31832" stroke="#a31832" d="M119 82 135 122 107 115Z"/>
-      <path fill="#d73544" stroke="#d73544" d="M150 89 183 98 171 127Z"/>
-      <path fill="#c7273d" stroke="#c7273d" d="M150 89 171 127 135 122Z"/>
-      <path fill="#e2444c" stroke="#e2444c" d="M183 98 211 104 199 130Z"/>
-      <path fill="#c72b3e" stroke="#c72b3e" d="M183 98 199 130 171 127Z"/>
-      <path fill="#b7253a" stroke="#b7253a" d="M211 104 234 108 199 130Z"/>
-      <path fill="#a61e35" stroke="#a61e35" d="M234 108 235 136 199 130Z"/>
-      <path fill="#460c22" stroke="#460c22" d="M23 141 45 132 31 169Z"/>
-      <path fill="#660e28" stroke="#660e28" d="M45 132 71 121 76 158Z"/>
-      <path fill="#530c25" stroke="#530c25" d="M45 132 76 158 31 169Z"/>
-      <path fill="#9e1231" stroke="#9e1231" d="M71 121 107 115 97 148Z"/>
-      <path fill="#83102c" stroke="#83102c" d="M71 121 97 148 76 158Z"/>
-      <path fill="#ba1936" stroke="#ba1936" d="M107 115 135 122 97 148Z"/>
-      <path fill="#a71130" stroke="#a71130" d="M97 148 135 122 141 161Z"/>
-      <path fill="#bf2038" stroke="#bf2038" d="M135 122 171 127 141 161Z"/>
-      <path fill="#d12b3e" stroke="#d12b3e" d="M171 127 199 130 181 160Z"/>
-      <path fill="#b91b35" stroke="#b91b35" d="M141 161 171 127 181 160Z"/>
-      <path fill="#a91932" stroke="#a91932" d="M199 130 235 136 229 163Z"/>
-      <path fill="#b92238" stroke="#b92238" d="M199 130 229 163 208 167Z"/>
-      <path fill="#9d132e" stroke="#9d132e" d="M181 160 199 130 208 167Z"/>
-      <path fill="#3d0b20" stroke="#3d0b20" d="M31 169 76 158 58 185Z"/>
-      <path fill="#340b1e" stroke="#340b1e" d="M31 169 58 185 45 193Z"/>
-      <path fill="#680c27" stroke="#680c27" d="M76 158 97 148 102 184Z"/>
-      <path fill="#510b24" stroke="#510b24" d="M76 158 102 184 58 185Z"/>
-      <path fill="#890e2b" stroke="#890e2b" d="M97 148 141 161 102 184Z"/>
-      <path fill="#a21330" stroke="#a21330" d="M141 161 181 160 166 191Z"/>
-      <path fill="#7b0b28" stroke="#7b0b28" d="M102 184 141 161 137 201Z"/>
-      <path fill="#8e102d" stroke="#8e102d" d="M141 161 166 191 137 201Z"/>
-      <path fill="#92102b" stroke="#92102b" d="M181 160 208 167 194 191Z"/>
-      <path fill="#7b0e28" stroke="#7b0e28" d="M181 160 194 191 166 191Z"/>
-      <path fill="#79102a" stroke="#79102a" d="M208 167 229 163 216 189Z"/>
-      <path fill="#6b0e27" stroke="#6b0e27" d="M208 167 216 189 194 191Z"/>
-      <path fill="#390b20" stroke="#390b20" d="M45 193 58 185 64 213Z"/>
-      <path fill="#490b22" stroke="#490b22" d="M58 185 102 184 91 211Z"/>
-      <path fill="#400b21" stroke="#400b21" d="M58 185 91 211 64 213Z"/>
-      <path fill="#5e0b25" stroke="#5e0b25" d="M102 184 137 201 91 211Z"/>
-      <path fill="#420c22" stroke="#420c22" d="M64 213 91 211 87 227Z"/>
-      <path fill="#500b24" stroke="#500b24" d="M91 211 137 201 110 233Z"/>
-      <path fill="#440b22" stroke="#440b22" d="M91 211 110 233 87 227Z"/>
-      <path fill="#660c27" stroke="#660c27" d="M137 201 166 191 174 227Z"/>
-      <path fill="#500b23" stroke="#500b23" d="M137 201 174 227 149 234Z"/>
-      <path fill="#3b0a20" stroke="#3b0a20" d="M137 201 149 234 130 230Z"/>
-      <path fill="#400b22" stroke="#400b22" d="M137 201 130 230 110 233Z"/>
-      <path fill="#74102a" stroke="#74102a" d="M166 191 194 191 174 227Z"/>
-      <path fill="#69102a" stroke="#69102a" d="M194 191 197 211 174 227Z"/>
-      <path fill="#5d0d26" stroke="#5d0d26" d="M194 191 216 189 197 211Z"/>
-    </g>
     <use href="#am-body" fill="url(#am-gloss)"/>
-    <path d="m192 43 20 17-16 16Z" fill="#ffbc96" opacity=".16"/>
     <path d="m89 62 14-5 21 1 29-1-15 17-17 7-18-7Z" fill="url(#am-well)"/>
     <path d="m89 62 18 4 14 15-18-7Z" fill="#6c112b"/>
     <path d="m107 66 17-8 19 3-13 10-9 10Z" fill="#300b1c"/>
