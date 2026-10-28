@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <path id="apple" d="m128 64-20-21-28-5-25 10-19 16-13 25-5 30 4 32 13 32 20 24 24 15 25 5 24-6 25 6 27-6 24-17 21-27 11-30 2-32-8-30-16-24-20-14-26-3-21 8z"/>
+    <clipPath id="shape"><use href="#apple"/></clipPath>
+    <pattern id="squares" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="rotate(-12 128 128)">
+      <path fill="#77846a" d="M0 0h64v64H0z"/>
+      <path fill="#3d5141" d="M0 0h32v32H0zm32 32h32v32H32z"/>
+    </pattern>
+  </defs>
+  <use href="#apple" fill="url(#squares)"/>
+  <g clip-path="url(#shape)">
+    <path fill="#b9cea1" opacity=".14" d="m18 119 37-71 73 16-46 45-47 74z"/>
+    <path fill="#10261d" opacity=".32" d="m82 109 46-45 52-23 49 39-25 62-52 44-48 41-49-20z"/>
+    <path fill="#10261d" opacity=".26" d="m35 183 47-74 22 118 48-41 52-44 35-5-11 40-22 28-26 17-27 6-25-6-24 6-25-5-24-15z"/>
+  </g>
+  <path fill="#294234" d="m108 59 20 5 21-8-11 20-12 5z"/>
+  <path fill="#755640" d="m125 68 7-27 12-23 7 3-12 24-5 25z"/>
+</svg>
