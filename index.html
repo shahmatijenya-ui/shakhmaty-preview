@@ -1,22 +1,23 @@
 <!doctype html>
 <html lang="ru">
 <head>
+  <script>if(!['game','puzzle','opening'].some(key=>new URLSearchParams(location.search).has(key)))document.head.append(Object.assign(document.createElement('link'),{rel:'modulepreload',crossOrigin:'',href:"/shakhmaty-preview/assets/daily-3d-BjbFwQqa.js"}));</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#191e1b">
+  <meta name="theme-color" content="#202522">
   <meta name="referrer" content="no-referrer">
   <meta name="description" content="Личный шахматный тренер: разбор твоих ошибок, упражнения, короткие материалы и дебютные планы.">
-  <link rel="preload" href="/shakhmaty-preview/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/shakhmaty-preview/fonts/syne-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/shakhmaty-preview/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" type="image/svg+xml" href="/shakhmaty-preview/knight.svg">
   <title>Шахматы Женя — личная тренировка</title>
-  <script type="module" crossorigin src="/shakhmaty-preview/assets/main-Bdn8B5A1.js"></script>
-  <link rel="modulepreload" crossorigin href="/shakhmaty-preview/assets/style-xu8GQ8Mo.js">
-  <link rel="stylesheet" crossorigin href="/shakhmaty-preview/assets/style-JripxNz-.css">
-  <link rel="stylesheet" crossorigin href="/shakhmaty-preview/assets/main-B80_rubq.css">
+  <script type="module" crossorigin src="/shakhmaty-preview/assets/main-CGPQzC0w.js"></script>
+  <link rel="modulepreload" crossorigin href="/shakhmaty-preview/assets/style-DYwH-ddb.js">
+  <link rel="stylesheet" crossorigin href="/shakhmaty-preview/assets/style-BfRdabM-.css">
 </head>
 <body>
-  <div class="world" aria-hidden="true"></div>
+  <div class="world" aria-hidden="true"><span class="world-apple"></span><span class="world-apple"></span><span class="world-apple"></span><span class="world-apple"></span><span class="world-apple"></span><span class="world-apple"></span></div>
   <a class="skip-link" href="#main">К содержимому</a>
   <svg class="icon-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
     <symbol id="icon-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
@@ -32,27 +33,17 @@
     <symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 5C9 3 5 3 2 4v15c4-1 7-1 10 1 3-2 6-2 10-1V4c-3-1-7-1-10 1Zm0 0v15"/></symbol>
     <symbol id="icon-board" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18m6-18v18M3 9h18M3 15h18"/></symbol>
   </defs></svg>
-  <header class="site-header">
-    <a class="site-brand" href="/shakhmaty-preview/" aria-label="Шахматы Женя, главная"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M10 32h22M13 28h16l-2-8 3-3-3-9-6 4-7 6 7 2-4 8M23 11l-1-5-5 6"/><circle cx="24" cy="15" r="1"/></svg><span>шахматы <strong>женя</strong></span></a>
-    <nav class="app-dock" aria-label="Навигация"><a href="/shakhmaty-preview/" id="daily-link" class="active"><span>Практика</span></a><a id="review-link" href="#connection-dialog"><span>Разбор</span></a></nav>
-    <button id="connection" class="connection" aria-label="Lichess и подключение"><span class="status-dot"></span><span>Lichess</span><span aria-hidden="true">↗</span></button>
-  </header>
+  <nav class="app-dock" aria-label="Навигация"><a href="/shakhmaty-preview/" id="daily-link" class="active"><svg class="icon" aria-hidden="true"><use href="#icon-book"/></svg><span>Практика</span></a><a id="review-link" hidden><svg class="icon" aria-hidden="true"><use href="#icon-board"/></svg><span>Разбор</span></a><button id="connection" class="connection" aria-label="Lichess и подключение"><span class="status-dot"></span><span>Lichess</span></button></nav>
   <main id="main" tabindex="-1">
     <div class="sr-only"><p id="page-label"></p><h1 id="page-title">Твоя тренировка</h1><span id="date"></span></div>
-    <section id="quiet-hero" class="quiet-hero" aria-labelledby="hero-title">
-      <div class="hero-copy"><p class="eyebrow">ЛИЧНАЯ ШАХМАТНАЯ ПРАКТИКА</p><h2 id="hero-title">Сначала мысль.<br><span>Потом ход.</span></h2><p class="hero-intro">Вернись к важным моментам своей игры.<br class="desktop-break"> Найди решение. Забери идею в следующую партию.</p><div class="hero-actions"><a id="hero-action" class="button primary" href="#today">К тренировке <span aria-hidden="true">↗</span></a><button id="hero-connect" class="text-button">Подключить Lichess</button></div><p class="hero-note">Твои партии. Понятный разбор. Один следующий шаг.</p></div>
-      <figure id="mind-sculpture" class="mind" aria-label="Декоративная композиция: голова, зелёное яблоко и 999IQ">
-        <div class="mind-art" aria-hidden="true"><img class="mind-fallback" src="/shakhmaty-preview/mind-sculpture.svg" alt="" width="520" height="480"><svg class="head-profile" viewBox="0 0 520 480" fill="none"><defs><linearGradient id="mind-outline" x1="110" y1="80" x2="390" y2="420" gradientUnits="userSpaceOnUse"><stop stop-color="#b5bba9" stop-opacity=".6"/><stop offset=".6" stop-color="#778571" stop-opacity=".4"/><stop offset="1" stop-color="#b5bba9" stop-opacity=".65"/></linearGradient></defs><path class="head-back" d="M164 428 181 336C120 311 98 252 103 191 108 100 180 49 270 64 349 76 379 138 367 208L393 247Q398 260 378 263L363 265 364 295Q360 318 331 319L296 321 292 382 340 428Z" transform="translate(18 -7)"/><path class="head-front" d="M164 428 181 336C120 311 98 252 103 191 108 100 180 49 270 64 349 76 379 138 367 208L393 247Q398 260 378 263L363 265 364 295Q360 318 331 319L296 321 292 382 340 428Z"/><path class="head-detail" d="m164 428 18-7M340 428l18-7M103 191l18-7M270 64l18-7M393 247l18-7M181 336l18-7M296 321l18-7M367 208l18-7M364 295l18-7M206 369h69M185 404h119M342 187l8 4"/><path class="chess-base" d="M151 438h203M144 446h217"/></svg><canvas class="mind-canvas"></canvas></div>
-        <figcaption><span>НЕБОЛЬШОЙ ХОД. БОЛЬШАЯ МЫСЛЬ.</span><button id="mind-motion" type="button" aria-label="Остановить анимацию" aria-pressed="true">Ⅱ</button></figcaption>
-      </figure>
+    <section id="quote-entrance" class="quote-entrance" aria-label="Мысли о шахматах" hidden>
+      <div class="quote-sticky"><blockquote id="welcome-quote" class="quote-text"></blockquote></div>
     </section>
     <span id="today" class="section-anchor" aria-hidden="true"></span>
     <div id="notice" class="notice" role="status" hidden></div>
     <div id="page-loading" class="page-loading" role="status"><span class="loading-mark"></span>Готовлю твою тренировку…</div>
     <section id="daily-gallery" class="daily-gallery" aria-label="Шахматные задачи" hidden>
-      <div class="practice-heading"><div><p class="eyebrow">ТВОЯ СЛЕДУЮЩАЯ СЕССИЯ</p><h2 id="practice-title">Твоя практика на сегодня</h2></div><p id="practice-caption">Замечать возможности<br>до того, как сделать ход.</p></div>
       <div id="daily-cards" class="daily-cards"></div>
-      <p id="practice-note" class="practice-note"></p>
     </section>
     <section id="shadow-entry" class="shadow-entry shadow-decoration" aria-label="Бой с тенью. Декоративная анимация; режим игры пока выключен." hidden>
       <div class="shadow-art"><video muted loop playsinline preload="none" width="1280" height="720" data-src="/shakhmaty-preview/shadow-loop.mp4" data-webm="/shakhmaty-preview/shadow-loop.webm" data-poster="/shakhmaty-preview/shadow-poster.webp" aria-hidden="true" tabindex="-1"></video></div>
@@ -119,8 +110,7 @@
       <details id="progress-details"><summary>Увидеть изменения</summary><div id="trajectory" class="trajectory"></div><div id="recent-games" class="recent-games"></div></details>
       <details id="openings-details"><summary>Найти своё начало</summary><div id="playing-style" class="playing-style"></div><div id="opening-list" class="opening-list"></div></details>
     </section>
-    <section class="quiet-quote" aria-label="Мысль о шахматах"><blockquote cite="https://en.wikiquote.org/wiki/Emanuel_Lasker#Quotes"><p>«Я думаю, что сильный ход<br><em>тем самым и красив».</em></p></blockquote><span>ЭМАНУЭЛЬ ЛАСКЕР</span></section>
-    <footer class="site-footer"><span>шахматы женя <span aria-hidden="true">/</span> личная практика</span><a id="latest-game" hidden>К последней партии ↗</a><span id="cutoff-note" class="sr-only">Разбираем только новые партии.</span><button id="footer-settings" class="text-button">Настройки ↗</button></footer>
+    <footer><a id="latest-game" hidden>К последней партии ↗</a><span id="cutoff-note" class="sr-only">Разбираем только новые партии.</span></footer>
   </main>
   <dialog id="reading-dialog"><button id="close-reading" class="dialog-close icon-button" aria-label="Закрыть">×</button><p class="eyebrow" id="reading-theme"></p><h2 id="reading-title"></h2><p id="reading-context" class="muted"></p><div id="reading-body" class="reading-body"></div><p id="reading-habit" class="coach-tip"></p><a id="reading-source" class="text-button" target="_blank" rel="noopener">Почитать подробнее ↗</a><button id="reading-practice" class="button primary full">Вернуться к позиции</button></dialog>
   <dialog id="settings-dialog"><button id="close-settings" class="dialog-close icon-button" aria-label="Закрыть">×</button><p class="eyebrow">ТВОЁ УДОБСТВО</p><h2>Доска и отклик</h2><label class="setting-row" for="sound-setting"><span><strong>Звуки ходов</strong><small>Короткий отклик на ход и результат</small></span><input id="sound-setting" type="checkbox" role="switch"></label><label class="setting-row" for="motion-setting"><span><strong>Анимация и переходы</strong><small>Движение фигур и появление блоков. Учитывает уменьшение движения на устройстве</small></span><input id="motion-setting" type="checkbox" role="switch" checked></label><p class="muted">Настройки сохраняются в этом браузере. Фигуры можно перемещать нажатием или перетаскиванием. На доске доступны стрелки и Enter, в разборе — ← и →.</p></dialog>
