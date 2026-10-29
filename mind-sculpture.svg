@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 520 480" fill="none" role="img" aria-labelledby="mind-title mind-description">
+  <title id="mind-title">Тихий ход</title>
+  <desc id="mind-description">Контур головы, приглушённое зелёное яблоко и объёмная надпись 999IQ. Художественный мотив, а не оценка интеллекта.</desc>
+  <defs>
+    <linearGradient id="outline" x1="110" y1="80" x2="390" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#b5bba9" stop-opacity=".6"/>
+      <stop offset=".6" stop-color="#778571" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#b5bba9" stop-opacity=".65"/>
+    </linearGradient>
+    <radialGradient id="apple-shade" cx=".3" cy=".23" r=".8">
+      <stop stop-color="#95a368"/>
+      <stop offset=".48" stop-color="#819153"/>
+      <stop offset=".8" stop-color="#5f703f"/>
+      <stop offset="1" stop-color="#37472d"/>
+    </radialGradient>
+    <linearGradient id="leaf-shade" x1="239" y1="113" x2="281" y2="87" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#536e42"/>
+      <stop offset="1" stop-color="#7d9159"/>
+    </linearGradient>
+    <path id="profile" d="M164 428 181 336C120 311 98 252 103 191 108 100 180 49 270 64 349 76 379 138 367 208L393 247Q398 260 378 263L363 265 364 295Q360 318 331 319L296 321 292 382 340 428Z"/>
+    <!-- Helvetiker Bold outlines: no dependency on installed or network fonts. -->
+    <path id="nine" d="M769 492Q769 232 646 90Q539-33 384-33Q271-33 187 35Q98 107 83 224H282Q286 182 323 154Q359 127 404 127Q471 127 513 182Q563 248 563 384Q532 355 475 335Q418 315 372 315Q224 315 137 416Q58 507 58 642Q58 781 144 877Q239 984 407 984Q602 984 694 827Q769 699 769 492ZM416 476Q488 476 525 521Q563 566 563 632Q563 709 521 764Q474 826 403 826Q337 826 297 773Q258 720 258 649Q258 577 295 530Q339 476 416 476Z"/>
+    <g id="lettering" fill-rule="evenodd">
+      <use xlink:href="#nine"/>
+      <use xlink:href="#nine" x="828"/>
+      <use xlink:href="#nine" x="1656"/>
+      <path transform="translate(2484)" d="M249 0H41V1013H249Z"/>
+      <path transform="translate(2849)" d="M995 49 885-70 762 42Q709 4 641-12Q572-29 497-29Q271-29 135 123Q0 276 0 504Q0 731 131 881Q270 1040 497 1040Q719 1040 859 883Q994 731 994 506Q994 413 966 321Q938 229 884 152ZM730 299Q755 344 767 395Q779 446 779 504Q779 644 713 743Q638 857 505 857Q366 857 284 745Q210 644 210 501Q210 361 279 265Q357 157 492 157Q557 157 615 181L508 287 620 405Z"/>
+    </g>
+  </defs>
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <use xlink:href="#profile" transform="translate(18 -7)" stroke="#778571" stroke-opacity=".3" stroke-width=".8"/>
+    <use xlink:href="#profile" stroke="url(#outline)" stroke-width="1.5"/>
+    <path d="m164 428 18-7M340 428l18-7M103 191l18-7M270 64l18-7M393 247l18-7M181 336l18-7M296 321l18-7M367 208l18-7M364 295l18-7M206 369h69M185 404h119M342 187l8 4" stroke="#89967c" stroke-opacity=".3" stroke-width=".8"/>
+    <path d="M151 438h203M144 446h217" stroke="#89967c" stroke-opacity=".4"/>
+  </g>
+  <path d="M239 132C222 118 199 121 187 136 171 155 178 181 190 200 203 221 222 228 239 222 257 229 277 211 288 189 300 166 301 148 286 134 272 121 253 120 239 132Z" fill="url(#apple-shade)"/>
+  <path d="M238 132Q234 114 240 99" stroke="#77634a" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M240 113C246 92 265 83 282 88 276 106 258 117 240 113Z" fill="url(#leaf-shade)"/>
+  <path d="M242 112Q259 103 279 89" stroke="#9fa776" stroke-opacity=".65" stroke-width=".6"/>
+  <g transform="rotate(1.43 241 272)">
+    <use xlink:href="#lettering" transform="translate(157.1 295.2) scale(.04392 -.04392)" fill="#4d5a43"/>
+    <use xlink:href="#lettering" transform="translate(155.3 293.6) scale(.04392 -.04392)" fill="#8c987e"/>
+  </g>
+</svg>
