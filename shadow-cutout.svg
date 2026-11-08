@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="echo" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+  </defs>
+  <!-- The fixed illustration and the full envelope of the animated arm share
+       one matte. The video keeps its original pixels; no chroma key runs. -->
+  <g fill="white" filter="url(#soft)">
+    <path d="M0 306Q70 248 124 231L145 236Q118 208 124 151Q126 99 164 78Q195 61 238 70Q280 64 319 83L354 91L377 116L376 143L354 166L350 222L361 246L355 277L370 291L385 328L385 381L376 414L368 465Q412 476 423 512L411 558L354 640L331 720H0Z"/>
+    <path d="M365 395L609 347L833 369L1058 427L1190 548L1280 592V720H294L302 638Z"/>
+    <path d="M600 258Q724 232 909 226L911 197Q881 150 912 99Q932 36 978 25Q1040 4 1092 33Q1147 64 1147 123L1158 172L1280 193V606L1134 586L1037 483L995 359L749 352Q736 394 689 410L620 406Q589 368 595 325Z"/>
+  </g>
+  <g fill="white" filter="url(#echo)" opacity=".55">
+    <ellipse cx="500" cy="311" rx="84" ry="94"/>
+    <ellipse cx="662" cy="246" rx="97" ry="115"/>
+    <ellipse cx="814" cy="182" rx="95" ry="107"/>
+  </g>
+</svg>
