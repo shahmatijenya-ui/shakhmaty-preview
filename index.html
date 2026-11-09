@@ -15,9 +15,9 @@
   </script>
   <link rel="icon" type="image/svg+xml" href="/shakhmaty-preview/knight.svg">
   <title>Шахматы Женя — личная тренировка</title>
-  <script type="module" crossorigin src="/shakhmaty-preview/assets/main-BllkN06W.js"></script>
-  <link rel="modulepreload" crossorigin href="/shakhmaty-preview/assets/style-BK7EKMU_.js">
-  <link rel="stylesheet" crossorigin href="/shakhmaty-preview/assets/style-tutrctmA.css">
+  <script type="module" crossorigin src="/shakhmaty-preview/assets/main-hxcNuZND.js"></script>
+  <link rel="modulepreload" crossorigin href="/shakhmaty-preview/assets/style-DYyMJH90.js">
+  <link rel="stylesheet" crossorigin href="/shakhmaty-preview/assets/style-BuenvuqH.css">
 </head>
 <body>
   <script>
@@ -56,9 +56,9 @@
       <div class="shadow-art"><video muted loop playsinline preload="none" width="1280" height="720" data-src="/shakhmaty-preview/shadow-loop.mp4" data-webm="/shakhmaty-preview/shadow-loop.webm" data-poster="/shakhmaty-preview/shadow-poster.webp" aria-hidden="true" tabindex="-1"></video></div>
     </section>
     <section id="training-empty" class="training-empty" hidden>
-      <div class="empty-copy"><p class="eyebrow" id="empty-label">С чего начнём</p><h2 id="empty-title">Твоя партия — первый урок</h2><p id="empty-text">Подключи Lichess. После следующей партии здесь появятся твои главные ошибки и упражнения для их исправления.</p><div class="empty-actions"><a id="empty-action" class="button primary" href="/api/auth/lichess">Подключить Lichess</a><button id="empty-sync" class="text-button" hidden>Обновить партии</button><button id="reload-daily" class="button secondary" hidden>Попробовать снова</button></div><p id="sync-status" class="sync-status" role="status" hidden></p></div>
+      <div class="empty-copy"><p class="eyebrow" id="empty-label">С чего начнём</p><h2 id="empty-title">Твоя партия — первый урок</h2><p id="empty-text">Подключи Lichess и сыграй новую партию. Затем вернёмся к важным решениям: посмотрим, что изменилось на доске и где можно было сыграть сильнее.</p><div class="empty-actions"><a id="empty-action" class="button primary" href="/api/auth/lichess">Подключить Lichess</a><button id="empty-sync" class="text-button" hidden>Обновить партии</button><button id="reload-daily" class="button secondary" hidden>Попробовать снова</button></div><p id="sync-status" class="sync-status" role="status" hidden></p></div>
       <div class="hero-space" aria-hidden="true"><span class="scene-caption">Каждая сильная игра<br>начинается с одного хода.</span></div>
-      <ol id="start-steps" class="start-steps"><li id="connect-step"><span>1</span><div><strong>Подключи Lichess</strong><p>Один раз, без передачи пароля</p></div></li><li><span>2</span><div><strong>Сыграй новую партию</strong><p>Тренер сам найдёт важные решения</p></div></li><li><span>3</span><div><strong>Исправь и закрепи</strong><p>Короткий урок и практика на доске</p></div></li></ol>
+      <ol id="start-steps" class="start-steps"><li id="connect-step"><span>1</span><div><strong>Подключи Lichess</strong><p>Достаточно разрешить доступ к партиям.</p></div></li><li><span>2</span><div><strong>Сыграй новую партию</strong><p>Тренер выберет моменты для разбора.</p></div></li><li><span>3</span><div><strong>Исправь и закрепи</strong><p>Прочитай объяснение и проверь идею на доске.</p></div></li></ol>
     </section>
     <div id="workspace" class="workspace">
       <section class="board-column" aria-label="Доска и управление">
@@ -93,9 +93,9 @@
           <div id="solution" class="solution" hidden><h3>Закрепи идею</h3><p id="solution-intro"></p><details><summary>Решение словами</summary><p id="solution-text"></p></details></div>
           <button id="next-puzzle" class="button primary full" hidden>Следующая задача →</button>
           <a id="puzzle-game-link" class="text-button full" hidden>Посмотреть эту ошибку в партии →</a>
-          <div class="daily-footer"><span class="status-dot"></span><p>Пройденные позиции вернутся на повторение через 1, 3, 7 и 14 дней. Новые ошибки уточняют план.</p></div>
+          <div class="daily-footer"><span class="status-dot"></span><p>Знакомые позиции будут возвращаться, чтобы ты мог проверить, помнишь ли идею. После самостоятельных решений интервалы растут: 1, 3, 7 и 14 дней.</p></div>
         </section>
-        <section id="opening-panel" hidden><p class="eyebrow" id="opening-trigger"></p><h2 id="opening-title"></h2><p id="opening-reason" class="intro"></p><ol id="opening-plans" class="opening-plans"></ol><div id="opening-feedback" class="feedback" role="status"></div><button id="opening-save" class="button secondary" hidden>Сохранить прохождение</button><div class="puzzle-actions"><button id="opening-restart" class="button secondary">Повторить пример</button><a class="text-button" href="/shakhmaty-preview/">К моей тренировке</a></div><p class="muted">Это учебный пример. Соперник может выбрать другие ходы — тогда ориентируйся на планы и угрозы.</p></section>
+        <section id="opening-panel" hidden><p class="eyebrow" id="opening-trigger"></p><h2 id="opening-title"></h2><p id="opening-reason" class="intro"></p><ol id="opening-plans" class="opening-plans"></ol><div id="opening-feedback" class="feedback" role="status"></div><button id="opening-save" class="button secondary" hidden>Сохранить прохождение</button><div class="puzzle-actions"><button id="opening-restart" class="button secondary">Повторить пример</button><a class="text-button" href="/shakhmaty-preview/">К моей тренировке</a></div><p class="muted">Здесь разобрано одно возможное продолжение. Если соперник сыграет иначе, сначала проверь его угрозу, затем выбери ход, который помогает твоему плану.</p></section>
         <section id="review-panel" hidden>
           <div class="panel-heading"><span class="eyebrow">Разбор твоей партии</span><span class="pill">Stockfish 19</span></div>
           <div id="review-loading" class="empty-state" role="status">Загружаю твою партию…</div>
